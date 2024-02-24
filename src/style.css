@@ -41,6 +41,8 @@ header {
     align-items: center;
     justify-items: center;
     padding: 10px 20px;
+    box-shadow: 2px 0px 10px #b45309;
+    background-color: #e5e5e5;
 }
 
 h1 {
@@ -91,4 +93,13 @@ ul {
     background-color: #fffbeb;
     border: 1px solid #fcd34d;
     border-radius: 10px;
+}
+
+#submit-location-search:hover {
+    cursor: pointer;
+    outline: 2px solid #fbbf24;
+}
+
+#submit-location-search:focus, #location-search:focus-visible {
+    outline: 2px solid #fbbf24;
 }
