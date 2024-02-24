@@ -12,10 +12,25 @@
     src: url(./assets/RobotoCondensed-Bold.ttf);
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 500px) {
+    .options {
+        grid-template-columns: 1fr 1fr !important;
+        justify-items: center;
+    }
+
+    .options>li:nth-child(3) {
+        grid-area: 2 / 1 / 2 / 3
+    }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 500px) {
     header {
         grid-template-columns: 1fr;
         grid-auto-rows: 1fr;
+    }
+
+    .options {
+        justify-items: center;
     }
 }
 
@@ -102,4 +117,13 @@ ul {
 
 #submit-location-search:focus, #location-search:focus-visible {
     outline: 2px solid #fbbf24;
+}
+
+#current-weather:hover, #forecast-weather:hover {
+    width: fit-content;
+
+}
+#current-weather:hover, #forecast-weather:hover {
+    cursor: pointer;
+    font-weight: bold;
 }
