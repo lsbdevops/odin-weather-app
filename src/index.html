@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/roboto-condensed" type="text/css" />
     <title>Document</title>
 </head>
 <body>
-    
+   <header>
+    <div class="title-container">
+        <h1>Quick Weather</h1>
+        <img src="./assets/starkbewolkt-1265202_1280.png" alt="Weather Logo" id="header-logo">
+    </div>
+    <nav>
+        <ul class="options">
+            <li>Current Weather</li>
+            <li>Weather Forecast</li>
+            <li>
+                <form action="" id="location-search-form">
+                    <label for="location-search">Change Location:</label>
+                    <input type="text" name="location-search" id="location-search">
+                    <button type="submit" id="submit-location-search">Go</button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+   </header>
+   <div class="content"></div>
+   <footer></footer>
 </body>
 </html>
