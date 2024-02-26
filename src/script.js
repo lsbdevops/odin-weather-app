@@ -1,4 +1,4 @@
 import "./style.css";
 import getData from './weatherInterface';
 
-//getData('melbourne');
+getData('melbourne');

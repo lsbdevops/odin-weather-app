@@ -1,10 +1,10 @@
 import getCurrentWeather from './getWeather';
 import WeatherStorage from './weatherData';
+import updateDOM from './updateDOM';
 
 export default function processWeatherData(location) {
     getCurrentWeather(location)
         .then(data => {
-            console.log(data);
             const extractedData = {
                 location: data.location.name,
                 time: data.location.localtime,
@@ -18,5 +18,7 @@ export default function processWeatherData(location) {
             };
             return new WeatherStorage(extractedData);
         })
-        .then(storedData => console.log(storedData))
+        .then(storedData => {
+            updateDOM(storedData)
+        })
 }
