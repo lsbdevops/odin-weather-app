@@ -8,25 +8,51 @@
 </head>
 <body>
    <header>
-    <div class="title-container">
-        <h1>Quick Weather</h1>
-        <img src="./assets/starkbewolkt-1265202_1280.png" alt="Weather Logo" id="header-logo">
-    </div>
-    <nav>
-        <ul class="options">
-            <li id="current-weather">Current Weather</li>
-            <li id="forecast-weather">Weather Forecast</li>
-            <li>
-                <form action="" id="location-search-form">
-                    <label for="location-search">Change Location:</label>
-                    <input type="text" name="location-search" id="location-search">
-                    <button type="submit" id="submit-location-search">Go</button>
-                </form>
-            </li>
-        </ul>
-    </nav>
+        <div class="title-container">
+            <h1>Quick Weather</h1>
+            <img src="./assets/starkbewolkt-1265202_1280.png" alt="Weather Logo" id="header-logo">
+        </div>
+        <nav>
+            <ul class="options">
+                <li id="current-weather">Current Weather</li>
+                <li id="forecast-weather">Weather Forecast</li>
+                <li>
+                    <form action="" id="location-search-form">
+                        <label for="location-search">Change Location:</label>
+                        <input type="text" name="location-search" id="location-search">
+                        <button type="submit" id="submit-location-search">Go</button>
+                    </form>
+                </li>
+            </ul>
+        </nav>
    </header>
-   <div class="content"></div>
+   <div class="content">
+        <div class="location-details">
+            <h2 id="location-header">Melbourne</h2>
+            <h4 id="location-time">(26/02/2024)</h4>
+        </div>
+        <div class="weather-container">
+            <h3>Current Weather Conditions</h3>
+            <div class="weather-info">
+                <div id="condition">Partly Cloudy</div>
+                <div id="weather-icon"><img src="./assets/starkbewolkt-1265202_1280.png" alt="Weather Logo" id="header-logo"></div>
+                <span id="current-temperature" class="weather-data">21</span>
+                <span class="units">°c</span>
+                <span>Feels like:</span>
+                <span id="feels-like-temperature" class="weather-data">21</span>
+                <span class="units">°c</span>
+                <span>Wind:</span>
+                <span id="wind" class="weather-data">15</span>
+                <span class="units">kph</span>
+                <span>Humidity:</span>
+                <span id="humidity" class="weather-data">70</span>
+                <span class="units">%</span>
+                <span>UV:</span>
+                <span id="uv" class="weather-data">3</span>
+                <span class="units"></span>
+            </div>
+        </div>
+   </div>
    <footer></footer>
 </body>
 </html>
