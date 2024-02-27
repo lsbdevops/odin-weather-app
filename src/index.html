@@ -18,7 +18,7 @@
                 <li>
                     <form action="" id="location-search-form">
                         <label for="location-search">Change Location:</label>
-                        <input type="text" name="location-search" id="location-search">
+                        <input type="text" name="location-search" id="location-search" required pattern="^[a-zA-Z]+$">
                         <button type="submit" id="submit-location-search">Go</button>
                     </form>
                 </li>
@@ -27,6 +27,7 @@
    </header>
    <div class="content">
         <div class="location-details">
+            <div id="error-msg"></div>
             <h2 id="location-header"></h2>
             <h4 id="location-time"></h4>
         </div>

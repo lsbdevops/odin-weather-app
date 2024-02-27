@@ -20,3 +20,9 @@ export default function updateCurrentWeather(weatherData) {
     uvElement.textContent = weatherData.uv;
     conditionIconImg.src = weatherData.icon;
 }
+
+function handleError(errorMsg) {
+    document.querySelector('#error-msg').textContent = errorMsg;
+} 
+
+export {handleError}

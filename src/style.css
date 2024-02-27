@@ -196,3 +196,11 @@ ul {
 #current-temperature, #current-temperature + .units {
     font-size: 2.5rem
 }
+
+#error-msg {
+    color: red;
+    font-size: 1.5rem;
+}
+
+
+
