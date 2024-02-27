@@ -11,7 +11,7 @@ export default function updateCurrentWeather(weatherData) {
     const conditionIconImg = document.querySelector('#condition-icon');
 
     locationElement.textContent = weatherData.location;
-    timeDateElement.textContent = weatherData.time;
+    timeDateElement.textContent = weatherData.dateTime;
     conditionElement.textContent = weatherData.condition;
     currentTempElement.textContent = weatherData.temp;
     feelsLikeTempElement.textContent = weatherData.tempFeelsLike;
