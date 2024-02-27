@@ -5,13 +5,13 @@ import updateDOM, { handleError } from './updateDOM';
 export default function processWeatherData(location) {
     getCurrentWeather(location)
         .then(data => {
-            console.log(data);
             if (data.error) {
                 throw new Error(data.error.message);
             }
             else {
                 const extractedData = {
                     location: data.location.name,
+                    country: data.location.country,
                     time: data.location.localtime,
                     temp: data.current.temp_c,
                     feelsLike: data.current.feelslike_c,

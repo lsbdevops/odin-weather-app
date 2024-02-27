@@ -1,6 +1,7 @@
 export default class CurrentWeatherData {
     constructor(data) {
-        this.location = data.location;
+        this.city = data.location;
+        this.country = data.country;
         this.time = data.time;
         this.temp = data.temp;
         this.tempFeelsLike = data.feelsLike;
@@ -13,6 +14,10 @@ export default class CurrentWeatherData {
 
     get dateTime() {
         return `${this.formatTime()} (${this.formatDate()})`;
+    }
+
+    get location() {
+        return this.formatLocation();
     }
 
     formatDate() {
@@ -39,6 +44,9 @@ export default class CurrentWeatherData {
         }
 
         return `${hour}:${minute} ${period}`;
+    }
 
+    formatLocation() {
+        return `${this.city}, ${this.country}`;
     }
 }
