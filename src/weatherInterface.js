@@ -1,6 +1,6 @@
 import getCurrentWeather from './getWeather';
 import WeatherStorage from './weatherData';
-import updateDOM, { handleError } from './updateDOM';
+import { handleError, createCurrentWeatherInfo } from './updateDOM';
 
 export default function processWeatherData(location) {
     getCurrentWeather(location)
@@ -25,7 +25,7 @@ export default function processWeatherData(location) {
             }
         })
         .then(storedData => {
-            updateDOM(storedData)
+            createCurrentWeatherInfo(storedData)
         })
     .catch(err => handleError(err))
 }

@@ -18,7 +18,7 @@
                 <li>
                     <form action="" id="location-search-form">
                         <label for="location-search">Change Location:</label>
-                        <input type="text" name="location-search" id="location-search" required pattern="^[a-zA-Z]+$">
+                        <input type="text" name="location-search" id="location-search" required pattern="^[a-zA-Z ]+$">
                         <button type="submit" id="submit-location-search">Go</button>
                     </form>
                 </li>
@@ -33,24 +33,6 @@
         </div>
         <div class="weather-container">
             <h3>Current Weather Conditions</h3>
-            <div class="weather-info">
-                <div id="condition">Partly Cloudy</div>
-                <div id="weather-icon"><img src="#" alt="Current Weather Condition Icon" id="condition-icon"></div>
-                <span id="current-temperature" class="weather-data"></span>
-                <span class="units">°c</span>
-                <span>Feels like:</span>
-                <span id="feels-like-temperature" class="weather-data"></span>
-                <span class="units">°c</span>
-                <span>Wind:</span>
-                <span id="wind" class="weather-data"></span>
-                <span class="units">kph</span>
-                <span>Humidity:</span>
-                <span id="humidity" class="weather-data"></span>
-                <span class="units">%</span>
-                <span>UV Index:</span>
-                <span id="uv" class="weather-data"></span>
-                <span class="units"></span>
-            </div>
         </div>
    </div>
    <footer></footer>
