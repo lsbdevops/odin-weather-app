@@ -191,6 +191,7 @@ ul {
 
 #weather-icon {
     padding: 15px;
+    justify-self: center;
 }
 
 #current-temperature, #current-temperature + .units {

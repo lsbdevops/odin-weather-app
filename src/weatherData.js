@@ -70,8 +70,8 @@ export class ForecastData extends WeatherData {
         this.minTemp = data.minTemp;
         this.rainChance = data.rainChance;
         this.totalPrecipitation = data.precipitation;
-        this.avgHumidity = data.humidity;
-        this.peakUv = data.uv;
+        this.humidity = data.humidity;
+        this.uv = data.uv;
         this.condition = data.condition;
         this.icon = data.conditionIcon;
     }

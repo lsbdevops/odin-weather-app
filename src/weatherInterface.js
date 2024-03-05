@@ -1,6 +1,6 @@
 import getWeather from './getWeather';
 import CurrentWeatherStorage, {ForecastData as ForecastWeatherStorage} from './weatherData';
-import { handleError, createCurrentWeatherInfo } from './updateDOM';
+import { handleError, createCurrentWeatherInfo, createForecastWeatherInfo, removeWeatherInfo } from './updateDOM';
 
 export default function processCurrentWeatherData(location) {
     return getWeather('current', location)
@@ -25,6 +25,7 @@ export default function processCurrentWeatherData(location) {
             }
         })
         .then(storedData => {
+            removeWeatherInfo();
             createCurrentWeatherInfo(storedData);
             return storedData.location;
         })
@@ -62,6 +63,13 @@ function processForecastWeatherData(location) {
             return forecastData;
         })
         .then((forecastData) => {
+            removeWeatherInfo();
+            
+            forecastData.forEach((day) => {
+                console.log(day)
+                createForecastWeatherInfo(day);
+            })
+            
             console.log(forecastData);
         })
         .catch(err => handleError(err))
