@@ -1,18 +1,23 @@
 import "./style.css";
-import getData from './weatherInterface';
+import getCurrentData, { processForecastWeatherData as getForecastData } from './weatherInterface';
 
 // Default location.
-getData('melbourne');
+let location = 'melbourne';
+//getCurrentData(location);
 
 const locationSearchBox = document.querySelector('#location-search');
 const locationSearchBtn = document.querySelector('#submit-location-search');
+const currentWeatherBtn = document.querySelector('#current-weather');
+const forecastWeatherBtn = document.querySelector('#forecast-weather');
 const errorMsg = document.querySelector('#error-msg');
 
 locationSearchBtn.addEventListener('click', (e) => {
     e.preventDefault();
     if (locationSearchBox.value && locationSearchBox.validity.valid) {
         errorMsg.textContent = '';
-        getData(locationSearchBox.value);
+        getCurrentData(locationSearchBox.value).then((locationResult) => {
+            location = locationResult
+        });
     }
     else if (locationSearchBox.validity.valueMissing) {
         errorMsg.textContent = 'Error: Search field empty.';
@@ -20,4 +25,12 @@ locationSearchBtn.addEventListener('click', (e) => {
     else if (locationSearchBox.validity.patternMismatch) {
         errorMsg.textContent = 'Error: Search must only include letters.';
     }
+})
+
+currentWeatherBtn.addEventListener('click', (e) => {
+    getCurrentData(location);
+})
+
+forecastWeatherBtn.addEventListener('click', (e) => {
+    getForecastData(location);
 })

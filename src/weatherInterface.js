@@ -1,9 +1,9 @@
-import getCurrentWeather from './getWeather';
+import getWeather from './getWeather';
 import WeatherStorage from './weatherData';
 import { handleError, createCurrentWeatherInfo } from './updateDOM';
 
-export default function processWeatherData(location) {
-    getCurrentWeather(location)
+export default function processCurrentWeatherData(location) {
+    return getWeather('current', location)
         .then(data => {
             if (data.error) {
                 throw new Error(data.error.message);
@@ -25,7 +25,17 @@ export default function processWeatherData(location) {
             }
         })
         .then(storedData => {
-            createCurrentWeatherInfo(storedData)
+            createCurrentWeatherInfo(storedData);
+            return storedData.location;
         })
     .catch(err => handleError(err))
 }
+
+function processForecastWeatherData(location) {
+    getWeather('forecast', location)
+        .then(data => {
+            console.log(data);
+        })
+}
+
+export {processForecastWeatherData}

@@ -1,18 +1,17 @@
-export default class CurrentWeatherData {
+class WeatherData {
     constructor(data) {
         this.city = data.location;
         this.country = data.country;
         this.time = data.time;
-        this.temp = data.temp;
-        this.tempFeelsLike = data.feelsLike;
-        this.wind = data.wind;
-        this.humidity = data.humidity;
-        this.uv = data.uv;
-        this.condition = data.condition;
-        this.icon = data.conditionIcon;
     }
 
     get dateTime() {
+        return `${this.formatTime()} (${this.formatDate()})`;
+    }
+
+    get location() {
+        return this.formatLocation();
+    }    get dateTime() {
         return `${this.formatTime()} (${this.formatDate()})`;
     }
 
@@ -48,5 +47,18 @@ export default class CurrentWeatherData {
 
     formatLocation() {
         return `${this.city}, ${this.country}`;
+    }
+}
+
+export default class CurrentData extends WeatherData {
+    constructor(data) {
+        super(data);
+        this.temp = data.temp;
+        this.tempFeelsLike = data.feelsLike;
+        this.wind = data.wind;
+        this.humidity = data.humidity;
+        this.uv = data.uv;
+        this.condition = data.condition;
+        this.icon = data.conditionIcon;
     }
 }
