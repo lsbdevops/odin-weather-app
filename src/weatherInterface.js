@@ -2,7 +2,16 @@ import getWeather from './getWeather';
 import CurrentWeatherStorage, {ForecastData as ForecastWeatherStorage} from './weatherData';
 import { handleError, createCurrentWeatherInfo, createForecastWeatherInfo, removeWeatherInfo } from './updateDOM';
 
-export default function processCurrentWeatherData(location) {
+export default function processCurrentWeatherData(position) {
+    let location;
+
+    if (position.coords) {
+        location = `${position.coords.latitude},${position.coords.longitude}`;
+    }
+    else {
+        location = position;
+    }
+
     return getWeather('current', location)
         .then(data => {
             if (data.error) {
@@ -63,7 +72,7 @@ function processForecastWeatherData(location) {
         })
         .then((forecastData) => {
             removeWeatherInfo();
-            
+
             forecastData.forEach((day) => {
                 createForecastWeatherInfo(day);
             })

@@ -3,7 +3,11 @@ import getCurrentData, { processForecastWeatherData as getForecastData } from '.
 
 // Default location.
 let location = 'melbourne';
-//getCurrentData(location);
+
+// Request user's location.
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(getCurrentData);
+}
 
 const locationSearchBox = document.querySelector('#location-search');
 const locationSearchBtn = document.querySelector('#submit-location-search');
@@ -27,10 +31,10 @@ locationSearchBtn.addEventListener('click', (e) => {
     }
 })
 
-currentWeatherBtn.addEventListener('click', (e) => {
+currentWeatherBtn.addEventListener('click', () => {
     getCurrentData(location);
 })
 
-forecastWeatherBtn.addEventListener('click', (e) => {
+forecastWeatherBtn.addEventListener('click', () => {
     getForecastData(location);
 })
