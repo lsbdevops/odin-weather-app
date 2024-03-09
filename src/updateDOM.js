@@ -98,7 +98,7 @@ function createForecastWeatherInfo(weatherData) {
     const uv = createEl({ tag: 'span', cls: 'weather-data', text: weatherData.uv, attributes: { id: 'uv' } });
     const uvUnits = createEl({ tag: 'span', cls: 'units', text: '' });
 
-    const container = createEl({ tag: 'div', cls: 'weather-info' });
+    const container = createEl({ tag: 'div', cls: ['weather-info', 'forecast'] });
     
     container.append(date, currentConditions, iconContainer,
     maxTemp, maxTempUnits,

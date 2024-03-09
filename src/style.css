@@ -26,6 +26,12 @@
     label[for='location-search'] {
         font-size: 1.5rem;
     }
+
+    .forecast {
+        margin-bottom: 25px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #b45309;
+    }
 }
 
 @media only screen and (max-width: 900px) and (min-width: 500px) {
@@ -177,7 +183,7 @@ ul {
     font-size: 2rem;
     align-items: center;
     row-gap: 15px;
-    margin: 5px 5px 20px 5px;
+    margin: 5px 5px 15px 5px;
     max-width: 250px;
 }
 
