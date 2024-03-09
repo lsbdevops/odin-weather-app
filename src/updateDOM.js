@@ -111,4 +111,14 @@ function createForecastWeatherInfo(weatherData) {
     document.querySelector('.weather-container').appendChild(container);
 }
 
-export {handleError, createCurrentWeatherInfo, createForecastWeatherInfo, removeWeatherInfo}
+function startLoading() {
+    const loadingDialog = document.querySelector('#loading');
+    loadingDialog.textContent = "LOADING";
+    loadingDialog.show();
+}
+
+function endLoading() {
+    document.querySelector('#loading').close();
+}
+
+export {handleError, createCurrentWeatherInfo, createForecastWeatherInfo, removeWeatherInfo, startLoading, endLoading}
