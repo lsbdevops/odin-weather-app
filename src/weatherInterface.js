@@ -38,15 +38,14 @@ function processForecastWeatherData(location) {
             if (data.error) {
                 throw new Error(data.error.message);
             }
-            
             const forecastData = [];
-
 
             data.forecast.forecastday.forEach((day) => {
                 const extractedData = {
                     location: data.location.name,
                     country: data.location.country,
                     time: data.location.localtime,
+                    date: day.date,
                     maxTemp: day.day.maxtemp_c,
                     minTemp: day.day.mintemp_c,
                     rainChance: day.day.daily_chance_of_rain,
@@ -64,7 +63,7 @@ function processForecastWeatherData(location) {
         })
         .then((forecastData) => {
             removeWeatherInfo();
-
+            
             forecastData.forEach((day) => {
                 createForecastWeatherInfo(day);
             })

@@ -3,7 +3,7 @@ export default function createElement(elementProperties) {
 
   const element = document.createElement(tag);
 
-  if (cls) {
+  if (cls !== undefined) {
     if (Array.isArray(cls)) {
       cls.forEach((clsItem) => element.classList.add(clsItem));
     } else {
@@ -11,11 +11,11 @@ export default function createElement(elementProperties) {
     }
   }
 
-  if (text) {
+  if (text !== undefined) {
     element.textContent = text;
   }
 
-  if (attributes) {
+  if (attributes !== undefined) {
     for (const [key, value] of Object.entries(attributes)) {
       element.setAttribute(key, value);
     }

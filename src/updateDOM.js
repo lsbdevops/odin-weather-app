@@ -14,17 +14,16 @@ function createCurrentWeatherInfo(weatherData) {
     document.querySelector('#location-header').textContent = weatherData.location;
     document.querySelector('#location-time').textContent = weatherData.dateTime;
 
-    const iconContainer = createEl({ tag: 'div', attributes: { id: 'weather-icon' } });
+    const iconContainer = createEl({ tag: 'div', cls: 'weather-icon' });
     const icon = createEl({
-        tag: 'img', attributes: {
+        tag: 'img', cls: 'condition-icon', attributes: {
             src: weatherData.icon,
             alt: 'Current Weather Condition Icon',
-            id: 'condition-icon',
         }
     });
     iconContainer.appendChild(icon);
 
-    const currentConditions = createEl({ tag: 'div', text: weatherData.condition, attributes: { id: 'condition' } });
+    const currentConditions = createEl({ tag: 'div', text: weatherData.condition, cls: 'condition' });
 
     const currentTemp = createEl({ tag: 'span', cls: 'weather-data', text: weatherData.temp, attributes: { id: 'current-temperature' } });
     const currentTempUnits = createEl({ tag: 'span', cls: 'units', text: '°c' });
@@ -62,17 +61,19 @@ function createForecastWeatherInfo(weatherData) {
     document.querySelector('#location-header').textContent = weatherData.location;
     document.querySelector('#location-time').textContent = weatherData.dateTime;
 
-    const iconContainer = createEl({ tag: 'div', attributes: { id: 'weather-icon' } });
+    const iconContainer = createEl({ tag: 'div', cls: 'weather-icon'});
     const icon = createEl({
-        tag: 'img', attributes: {
+        tag: 'img', cls: 'condition-icon', attributes: {
             src: weatherData.icon,
             alt: 'Current Weather Condition Icon',
-            id: 'condition-icon',
+
         }
     });
     iconContainer.appendChild(icon);
 
-    const currentConditions = createEl({ tag: 'div', text: weatherData.condition, attributes: { id: 'condition' } });
+    const date = createEl({tag: 'div', text: weatherData.date, cls: 'date'})
+
+    const currentConditions = createEl({ tag: 'div', text: weatherData.condition, cls: 'condition' });
 
     const maxTemp = createEl({ tag: 'span', cls: 'weather-data', text: weatherData.maxTemp });
     const maxTempUnits = createEl({ tag: 'span', cls: 'units', text: '°c' });
@@ -99,7 +100,7 @@ function createForecastWeatherInfo(weatherData) {
 
     const container = createEl({ tag: 'div', cls: 'weather-info' });
     
-    container.append(currentConditions, iconContainer,
+    container.append(date, currentConditions, iconContainer,
     maxTemp, maxTempUnits,
     minTempText, minTemp, minTempUnits,
     rainChanceText, rainChance, rainChanceUnits,

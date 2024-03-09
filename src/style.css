@@ -177,19 +177,21 @@ ul {
     font-size: 2rem;
     align-items: center;
     row-gap: 15px;
-    margin: 5px;
+    margin: 5px 5px 20px 5px;
+    max-width: 250px;
 }
 
 .weather-data {
     justify-self: end;
 }
 
-#condition {
+.condition, .date {
     grid-column: 1 / span 3;
     justify-self: center;
+    font-weight: bold;
 }
 
-#weather-icon {
+.weather-icon {
     padding: 15px;
     justify-self: center;
 }
@@ -203,5 +205,13 @@ ul {
     font-size: 1.5rem;
 }
 
+#weather-data-header {
+    text-align: center;
+}
 
-
+.weather-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
+}

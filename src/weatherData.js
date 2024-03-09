@@ -6,21 +6,15 @@ class WeatherData {
     }
 
     get dateTime() {
-        return `${this.formatTime()} (${this.formatDate()})`;
-    }
-
-    get location() {
-        return this.formatLocation();
-    }    get dateTime() {
-        return `${this.formatTime()} (${this.formatDate()})`;
+        return `${this.formatTime()} (${this.formatDate(this.time)})`;
     }
 
     get location() {
         return this.formatLocation();
     }
 
-    formatDate() {
-        const date = new Date(this.time);
+    formatDate(dateString) {
+        const date = new Date(dateString);
         const day = String(date.getDate()).padStart(2, '0');
         const month = String(date.getMonth() + 1).padStart(2, '0');
         const year = date.getFullYear();
@@ -69,6 +63,7 @@ export default class CurrentData extends WeatherData {
 export class ForecastData extends WeatherData {
     constructor(data) {
         super(data);
+        this.date = super.formatDate(data.date);
         this.maxTemp = data.maxTemp;
         this.minTemp = data.minTemp;
         this.rainChance = data.rainChance;
