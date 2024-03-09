@@ -64,13 +64,10 @@ function processForecastWeatherData(location) {
         })
         .then((forecastData) => {
             removeWeatherInfo();
-            
+
             forecastData.forEach((day) => {
-                console.log(day)
                 createForecastWeatherInfo(day);
             })
-            
-            console.log(forecastData);
         })
         .catch(err => handleError(err))
 }

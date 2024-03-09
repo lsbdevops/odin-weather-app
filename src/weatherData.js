@@ -35,8 +35,11 @@ class WeatherData {
         let period = 'a.m.';
 
         if (hour > 11) {
-            hour -= 12;
             period = 'p.m.';
+        }
+
+        if (hour > 12) {
+            hour -= 12;
         }
         else if (hour === 0) {
             hour += 12;
